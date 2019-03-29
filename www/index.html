@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>ZIM Mobile with MVC</title>
+
+<!-- Welcome to ZIM at https://zimjs.com - Code Creativity!                              -->
+<!-- ZIM runs on the HTML Canvas powered by JavaScript and CreateJS https://createjs.com -->
+<!-- Founded by Inventor Dan Zen - http://danzen.com - Canadian New Media Award Winner   -->
+<!-- ZIM is free to use. You can donate to help improve ZIM at https://zimjs.com/donate  -->
+
+<script src="https://d309knd7es5f10.cloudfront.net/createjs_1.1_min.js"></script>
+<script src="https://d309knd7es5f10.cloudfront.net/zim_10.0.1.js"></script>
+<script src="https://d309knd7es5f10.cloudfront.net/pizzazz_02.js"></script>
+<!-- use zimjs.com/distill for minified individual functions! -->
+
+<script src="scripts/model.js"></script>
+<script src="scripts/controller.js"></script>
+<script src="scripts/view.js"></script>
+
+<script>
+
+// SCALING OPTIONS
+// scaling can have values as follows with full being the default
+// "fit"	sets canvas and stage to dimensions and scales to fit inside window size
+// "outside"	sets canvas and stage to dimensions and scales to fit outside window size
+// "full"	sets stage to window size with no scaling
+// "tagID"	add canvas to HTML tag of ID - set to dimensions if provided - no scaling
+
+var scaling = "full"; // this will resize to fit inside the screen dimensions
+var color = light; // ZIM colors like green, blue, pink, faint, clear, etc.
+var outerColor = dark; // any HTML colors like "violet", "#333", etc. are fine to use
+
+var frame = new Frame(scaling, null, null, color, outerColor);
+frame.on("ready", function() {
+    zog("ready from ZIM Frame"); // logs in console (F12 - choose console)
+
+	// pizzazz.listIcons();
+
+    var stage = frame.stage;
+    var stageW = frame.width;
+    var stageH = frame.height;
+
+    // model
+    const m = app.makeModel();
+    // zog(m);
+    // new Label(m.title).center()
+
+    //viewport
+    const v = app.makeView(m , stage);
+    zog(v);
+    // new Label(m.title).center().mov(0,50);
+
+
+    // controller
+    const c = app.makeController(m , v, stage)
+    // zog(c);
+    // new Label(c.title).center().mov(0,100);
+
+
+    // frame.on("resize", () => {
+    //     // layoutManager.resize();
+    //     // zog(m.title)
+    // });
+
+    stage.update(); // this is needed to show any changes
+
+}); // end of ready
+
+</script>
+
+<meta name="viewport" content="width=device-width, user-scalable=no" />
+
+</head>
+
+<body>
+<!-- canvas with id="myCanvas" is made by zim Frame -->
+</body>
+</html>
