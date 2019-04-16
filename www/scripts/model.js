@@ -3,13 +3,12 @@ var app = function(app){  //module pattern
   app.makeModel = function () {
     const m = {};
 
+    //Page 1
     m.title = "Landmarker"
-    m.instructions = "Drag the countries on the left to match the landmarks on the right!"
-
-	  //Page 1
 	  m.slogan = "Come Learn Geography With Us!"
 
 	  // Page 2
+    m.instructions = "Drag the countries on the left to match the landmarks on the right!"
 	  m.titlesArray = ["Brazil", "China", "Egypt", "India", "USA"];
 
 	  m.shapes = {};
