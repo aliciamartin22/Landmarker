@@ -31,7 +31,7 @@ var scaling = "full"; // this will resize to fit inside the screen dimensions
 var color = light; // ZIM colors like green, blue, pink, faint, clear, etc.
 var outerColor = dark; // any HTML colors like "violet", "#333", etc. are fine to use
 
-var assets = ["logo.png", "icon.png", "AUSTRALIA-opera-house.png", "BELGIUM-atomium.png", "BRASIL-christ-the-redeemer.png", "CHINA-great-wall-of-china.png", "EGYPT-giza.png",  "ENGLAND-tower-bridge.png", "FRANCE-louvre.png", "GERMANY-lubeck.png", "INDIA-taj-mahal.png", "ITALY-milan.png", "JAPAN-itsukushima-shrine.png", "MALAYSIA-petronas-towers.png", "MEXICO-temple-of-the-frescoes.png", "UAE-burj-al-arab.png", "USA-statue-of-liberty.png", "complete.wav"];
+var assets = ["logo.png", "icon.png", "AUSTRALIA-opera-house.png", "BELGIUM-atomium.png", "BRASIL-christ-the-redeemer.png", "CHINA-great-wall-of-china.png", "EGYPT-giza.png",  "ENGLAND-tower-bridge.png", "FRANCE-louvre.png", "GERMANY-lubeck.png", "INDIA-taj-mahal.png", "ITALY-milan.png", "JAPAN-itsukushima-shrine.png", "MALAYSIA-petronas-towers.png", "MEXICO-temple-of-the-frescoes.png", "UAE-burj-al-arab.png", "USA-statue-of-liberty.png", "complete.wav", "coin.wav"];
 var frame = new Frame(scaling, null, null, color, outerColor, assets, "images/");
 frame.on("ready", function() {
     zog("ready from ZIM Frame"); // logs in console (F12 - choose console)
@@ -58,6 +58,7 @@ frame.on("ready", function() {
 </script>
 
 <meta name="viewport" content="width=device-width, user-scalable=no" />
+<link rel="icon" href="favicon.png" type="image/png" sizes="40x40">
 
 </head>
 

@@ -111,7 +111,8 @@ var app = function(app){  //module pattern
     				if (title.text == shape.title) {
     					title.removeFrom();
     					shape.removeFrom();
-    					stage.update(); // play a sound ;-) or add some points!
+              frame.asset("coin.wav").play();
+    					stage.update();
     					if (shapes.numChildren == 0) {
                 frame.asset("complete.wav").play();
     						message.show();
@@ -222,7 +223,8 @@ var app = function(app){  //module pattern
 				   if (title.text == shape.title) {
 					   title.removeFrom();
 					   shape.removeFrom();
-					   stage.update(); // play a sound ;-) or add some points!
+             frame.asset("coin.wav").play();
+					   stage.update();
 					   if (shapes2.numChildren == 0) {
                frame.asset("complete.wav").play();
 						   message2.show();
@@ -312,7 +314,8 @@ var app = function(app){  //module pattern
  				   if (title.text == shape.title) {
  					   title.removeFrom();
  					   shape.removeFrom();
- 					   stage.update(); // play a sound ;-) or add some points!
+             frame.asset("coin.wav").play();
+ 					   stage.update();
  					   if (shapes3.numChildren == 0) {
                frame.asset("complete.wav").play();
  						   message3.show();
@@ -364,9 +367,9 @@ var app = function(app){  //module pattern
 	        titleBarHeight:40,
 	        scrollBarActive:false,
 	        currentSelected:false,
-	        // indent:20,
-	        height:650,
-	        viewNum:13.5,
+          width:400,
+	        height:500,
+	        viewNum:12,
 	        boundary:new Boundary(0,0,stageW-200,stageH-200),
 	        borderWidth:-1,
 	        shadowBlur:-1,
@@ -375,6 +378,7 @@ var app = function(app){  //module pattern
 	        color:white,
 	        rollBackgroundColor:"#f09c23",
 	        rollColor:white,
+          draggable:false
 	     }).center(content);
 	     list.selectedIndex = -1;
 
@@ -390,12 +394,12 @@ var app = function(app){  //module pattern
 
        // Layout Manager
        manager.add(v.pages = new Pages([
-         {page:page1, swipe:[page2, null, null , null]},
-         {page:page2, swipe:[page3, page1, null, null]},
-         {page:page3, swipe:[page4, page2, null, null]},
-    		 {page:page4, swipe:[page5, page3, null, null]},
-    		 {page:page5, swipe:[null, page4, null, null]},
-       ], "slide", 500).addTo());
+         {page:page1, swipe:[null, page2, null , null]},
+         {page:page2, swipe:[page1, page3, null, page5]},
+         {page:page3, swipe:[page2, page4, null, page5]},
+    		 {page:page4, swipe:[page3, page5, null, page5]},
+    		 {page:page5, swipe:[page4, null, null, null]},
+       ], "fade", 500).addTo());
 
       return v; // this goes to whatever called app.makeView
   }

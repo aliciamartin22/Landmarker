@@ -1,7 +1,7 @@
 var app = function(app){ //module pattern
 
-    app.makeController = function (m, v, stage) {
-      const c = {};
+  app.makeController = function (m, v, stage) {
+    const c = {};
 
 	const hs = new HotSpots ([
     {page:v.page2, rect:v.page2.title, call:()=>{v.pages.go(v.page1, "left");}},
@@ -32,15 +32,15 @@ var app = function(app){ //module pattern
 	]);
 	hs.show();
 
-      frame.on("resize", () => {
+  frame.on("resize", () => {
 
-        v.manager.resize();
+    v.manager.resize();
 
-        stage.update();
-      })
+    stage.update();
+  })
 
-      stage.update();
-      return c;
+    stage.update();
+    return c;
 
   }
 return app; //module pattern
